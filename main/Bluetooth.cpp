@@ -35,16 +35,14 @@ esp_err_t Bluetooth::Bluetooth_a2dp_sink_init(const char* device_name){
 }
 
 void Bluetooth::bt_a2d_sink_data_cb(const uint8_t *data, uint32_t len){
-  if(1)
-  {
-    ESP_LOGI(TAG, "data rec: %ul", (size_t)len);
-  }
+
+  uint32_t i2s_bytes_written  = len;
+  i2s_write(I2S_NUM_0, (char*)data, len, &i2s_bytes_written, 100);
+  //ESP_LOGI(TAG, "data rec: %ul", i2s_bytes_written);
 }
 void Bluetooth::bt_a2d_sink_cb(esp_a2d_cb_event_t event, esp_a2d_cb_param_t *param){
-  if(1)
-  {
-    ESP_LOGI(TAG, "cb 2");
-  }
+
+  ESP_LOGI(TAG, "cb 2");
 }
 
 Bluetooth::~Bluetooth(){

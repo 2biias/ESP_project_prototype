@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
@@ -12,7 +11,7 @@
 
 #include "esp_log.h"
 #include "esp_system.h"
-#include "sdkconfig.h"
+//#include "sdkconfig.h"
 
 #if __has_include("esp_idf_version.h")
 #include "esp_idf_version.h"
@@ -24,6 +23,9 @@
 #include "esp_bt_device.h"
 #include "esp_bt_main.h"
 #include "esp_gap_bt_api.h"
+
+#include <driver/i2s.h>
+#include <driver/i2c.h>
 
 class Bluetooth{
 public:

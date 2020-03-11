@@ -6,8 +6,6 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_spi_flash.h"
-#include <nvs.h>
-#include "nvs_flash.h"
 
 #include "esp_log.h"
 #include "esp_system.h"
@@ -17,25 +15,15 @@
 #include "esp_idf_version.h"
 #endif
 
-#include "esp_a2dp_api.h"
-#include "esp_avrc_api.h"
-#include "esp_bt.h"
-#include "esp_bt_device.h"
-#include "esp_bt_main.h"
-#include "esp_gap_bt_api.h"
-
 #include "Bluetooth.h"
+#include "ESPcontroller.h"
 
 extern "C"{
 
 void app_main(){
 
-  //Flash storage is initialised to be able to used BT
-  esp_err_t err = nvs_flash_init();
-  if(err == ESP_ERR_NVS_NO_FREE_PAGES){
-    ESP_ERROR_CHECK(nvs_flash_erase());
-    err = nvs_flash_init();
-  }
+  ESPcontroller ESPcontroller;
+  ESPcontroller.InitFlash();
 
   //Initializing and starting Bluetooth service by given configations.
   //If no other bluetooth sevice is not started. Configures bt-controller.
@@ -45,6 +33,10 @@ void app_main(){
 
   Bluetooth Bluetooth;
   Bluetooth.Bluetooth_a2dp_sink_init("Smart_Sound_BT");
+
+  ESPcontroller.CodecInit();
+  ESPcontroller.I2SInit();
+  
 
 
   std::cout << "Success" << std::endl;
