@@ -1,13 +1,22 @@
 #include "Bluetooth.h"
 
 const char* Bluetooth::TAG = "Bluetooth device";
+Bluetooth* Bluetooth::this_ = nullptr;
 
-Bluetooth::Bluetooth()
+Bluetooth::Bluetooth(Ringbuffer<uint8_t>* writebuffer)
 {
+  //this_ will be the newest BT object. Only one should be created.
+  Bluetooth::this_ = this;
+  //Bluetooth doesnt use any readbuffer
+  bool res;
+  setReadBuffer(nullptr);
+  res = setWriteBuffer(writebuffer);
+
+  printf("BT setWriteBuffer = %u\n", res);
 }
 
-esp_err_t Bluetooth::Bluetooth_a2dp_sink_init(const char* device_name){
-
+esp_err_t Bluetooth::Bluetooth_a2dp_sink_init(const char* device_name)
+{
   esp_log_level_set("*", ESP_LOG_INFO);
   esp_log_level_set(TAG, ESP_LOG_DEBUG);
 
@@ -34,18 +43,23 @@ esp_err_t Bluetooth::Bluetooth_a2dp_sink_init(const char* device_name){
   return ESP_OK;
 }
 
-void Bluetooth::bt_a2d_sink_data_cb(const uint8_t *data, uint32_t len){
+void Bluetooth::bt_a2d_sink_data_cb(const uint8_t *data, uint32_t len)
+{
+  uint32_t bytes_written = 0;
+  bytes_written = this_->write(data, len);
+  //printf("Bluetooth recieved %u\nWritten %i bytes to ringbuffer\n", len, bytes_written);
 
-  uint32_t i2s_bytes_written  = len;
-  i2s_write(I2S_NUM_0, (char*)data, len, &i2s_bytes_written, 100);
+  //uint32_t i2s_bytes_written  = len;
+  //i2s_write(I2S_NUM_0, (char*)data, len, &i2s_bytes_written, 100);
   //ESP_LOGI(TAG, "data rec: %ul", i2s_bytes_written);
 }
-void Bluetooth::bt_a2d_sink_cb(esp_a2d_cb_event_t event, esp_a2d_cb_param_t *param){
-
+void Bluetooth::bt_a2d_sink_cb(esp_a2d_cb_event_t event, esp_a2d_cb_param_t *param)
+{
   ESP_LOGI(TAG, "cb 2");
 }
 
-Bluetooth::~Bluetooth(){
+Bluetooth::~Bluetooth()
+{
   //Disabling bluetooth
   esp_a2d_sink_deinit();
   esp_bluedroid_disable();
@@ -53,4 +67,6 @@ Bluetooth::~Bluetooth(){
   esp_bt_controller_disable();
   esp_bt_controller_deinit();
   esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT);
+  if(Bluetooth::this_ == this)
+    Bluetooth::this_ = nullptr;
 }

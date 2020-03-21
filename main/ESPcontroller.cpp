@@ -70,27 +70,27 @@ esp_err_t ESPcontroller::CodecInit(){
 	res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL4, 0x00);
 
 	/* power down ADC while configuring; volume: +9dB for both channels */
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCPOWER, 0xff);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL1, 0x33);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCPOWER, 0xff);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL1, 0x33);
 
 	/* select LINPUT2 / RINPUT2 as ADC input; stereo; 16 bit word length, format right-justified, MCLK / Fs = 256 */
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL2, 0x50);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL3, 0x00);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL4, 0x0e);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL5, 0x02);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL2, 0x50);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL3, 0x00);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL4, 0x0e);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL5, 0x02);
 
 	/* set ADC volume */
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL8, 0x20);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL9, 0x20);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL8, 0x20);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCCONTROL9, 0x20);
 
 	/* set LOUT1 / ROUT1 volume: 0dB (unattenuated) */
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL24, 0x1e);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL25, 0x1e);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL24, 0x1e);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL25, 0x1e);
 
 	/* power up and enable DAC; power up ADC (no MIC bias) */
 	res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACPOWER, 0x3c);
 	res |= WriteCodecI2C(ES8388_ADDR, ES8388_DACCONTROL3, 0x00);
-	res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCPOWER, 0x09);
+	//res |= WriteCodecI2C(ES8388_ADDR, ES8388_ADCPOWER, 0x09);
 
 	return res;
 }
@@ -103,8 +103,8 @@ esp_err_t ESPcontroller::I2SInit(){
     .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,
 		.communication_format = I2S_COMM_FORMAT_I2S,
 		.intr_alloc_flags = ESP_INTR_FLAG_LEVEL2,
-		.dma_buf_count = 8,
-		.dma_buf_len = I2S_READLEN,
+		.dma_buf_count = 2,
+		.dma_buf_len = 1024,
 		.use_apll = 1,
 		.tx_desc_auto_clear = 1,
 		.fixed_mclk = 0

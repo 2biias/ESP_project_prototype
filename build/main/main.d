@@ -81,6 +81,18 @@ main.o: /home/stud/esp/ESP_project_prototype/main/main.cpp \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_device.h \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_main.h \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_bt_api.h \
+ /home/stud/esp/esp-idf/components/driver/include/driver/i2c.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
+ /home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ /home/stud/esp/ESP_project_prototype/main/AudioElement.h \
+ /home/stud/esp/ESP_project_prototype/main/Ringbuffer.h \
+ /home/stud/esp/ESP_project_prototype/main/ScopedLocker.h \
+ /home/stud/esp/ESP_project_prototype/main/ESPcontroller.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/event_groups.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/timers.h \
+ /home/stud/esp/esp-idf/components/freertos/include/freertos/task.h \
  /home/stud/esp/esp-idf/components/driver/include/driver/i2s.h \
  /home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_struct.h \
  /home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_reg.h \
@@ -92,16 +104,8 @@ main.o: /home/stud/esp/ESP_project_prototype/main/main.cpp \
  /home/stud/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
  /home/stud/esp/esp-idf/components/driver/include/driver/adc.h \
  /home/stud/esp/esp-idf/components/soc/esp32/include/soc/adc_channel.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /home/stud/esp/esp-idf/components/driver/include/driver/i2c.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
- /home/stud/esp/ESP_project_prototype/main/ESPcontroller.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/event_groups.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/timers.h \
- /home/stud/esp/esp-idf/components/freertos/include/freertos/task.h \
- /home/stud/esp/ESP_project_prototype/main/es8388_registers.h
+ /home/stud/esp/ESP_project_prototype/main/es8388_registers.h \
+ /home/stud/esp/ESP_project_prototype/main/AudioCodec.h
 
 /home/stud/esp/esp-idf/components/newlib/include/stdio.h:
 
@@ -267,6 +271,30 @@ main.o: /home/stud/esp/ESP_project_prototype/main/main.cpp \
 
 /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_bt_api.h:
 
+/home/stud/esp/esp-idf/components/driver/include/driver/i2c.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
+
+/home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+/home/stud/esp/ESP_project_prototype/main/AudioElement.h:
+
+/home/stud/esp/ESP_project_prototype/main/Ringbuffer.h:
+
+/home/stud/esp/ESP_project_prototype/main/ScopedLocker.h:
+
+/home/stud/esp/ESP_project_prototype/main/ESPcontroller.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/event_groups.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/timers.h:
+
+/home/stud/esp/esp-idf/components/freertos/include/freertos/task.h:
+
 /home/stud/esp/esp-idf/components/driver/include/driver/i2s.h:
 
 /home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_struct.h:
@@ -289,23 +317,7 @@ main.o: /home/stud/esp/ESP_project_prototype/main/main.cpp \
 
 /home/stud/esp/esp-idf/components/soc/esp32/include/soc/adc_channel.h:
 
-/home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h:
-
-/home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
-
-/home/stud/esp/esp-idf/components/driver/include/driver/i2c.h:
-
-/home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
-
-/home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
-
-/home/stud/esp/ESP_project_prototype/main/ESPcontroller.h:
-
-/home/stud/esp/esp-idf/components/freertos/include/freertos/event_groups.h:
-
-/home/stud/esp/esp-idf/components/freertos/include/freertos/timers.h:
-
-/home/stud/esp/esp-idf/components/freertos/include/freertos/task.h:
-
 /home/stud/esp/ESP_project_prototype/main/es8388_registers.h:
+
+/home/stud/esp/ESP_project_prototype/main/AudioCodec.h:
 /home/stud/esp/ESP_project_prototype/main/./main.cpp:

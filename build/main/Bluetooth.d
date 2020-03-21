@@ -81,22 +81,14 @@ Bluetooth.o: /home/stud/esp/ESP_project_prototype/main/Bluetooth.cpp \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_device.h \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_bt_main.h \
  /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_bt_api.h \
- /home/stud/esp/esp-idf/components/driver/include/driver/i2s.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_struct.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_reg.h \
- /home/stud/esp/esp-idf/components/driver/include/driver/periph_ctrl.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h \
- /home/stud/esp/esp-idf/components/esp32/include/esp_dport_access.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
- /home/stud/esp/esp-idf/components/driver/include/driver/adc.h \
- /home/stud/esp/esp-idf/components/soc/esp32/include/soc/adc_channel.h \
+ /home/stud/esp/esp-idf/components/driver/include/driver/i2c.h \
  /home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h \
  /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /home/stud/esp/esp-idf/components/driver/include/driver/i2c.h \
  /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h \
- /home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h
+ /home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ /home/stud/esp/ESP_project_prototype/main/AudioElement.h \
+ /home/stud/esp/ESP_project_prototype/main/Ringbuffer.h \
+ /home/stud/esp/ESP_project_prototype/main/ScopedLocker.h
 
 /home/stud/esp/ESP_project_prototype/main/Bluetooth.h:
 
@@ -262,35 +254,19 @@ Bluetooth.o: /home/stud/esp/ESP_project_prototype/main/Bluetooth.cpp \
 
 /home/stud/esp/esp-idf/components/bt/bluedroid/api/include/api/esp_gap_bt_api.h:
 
-/home/stud/esp/esp-idf/components/driver/include/driver/i2s.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_struct.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/i2s_reg.h:
-
-/home/stud/esp/esp-idf/components/driver/include/driver/periph_ctrl.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/dport_reg.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/dport_access.h:
-
-/home/stud/esp/esp-idf/components/esp32/include/esp_dport_access.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/uart_reg.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
-
-/home/stud/esp/esp-idf/components/driver/include/driver/adc.h:
-
-/home/stud/esp/esp-idf/components/soc/esp32/include/soc/adc_channel.h:
+/home/stud/esp/esp-idf/components/driver/include/driver/i2c.h:
 
 /home/stud/esp/esp-idf/components/freertos/include/freertos/semphr.h:
 
 /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
 
-/home/stud/esp/esp-idf/components/driver/include/driver/i2c.h:
-
 /home/stud/esp/esp-idf/components/freertos/include/freertos/queue.h:
 
 /home/stud/esp/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+/home/stud/esp/ESP_project_prototype/main/AudioElement.h:
+
+/home/stud/esp/ESP_project_prototype/main/Ringbuffer.h:
+
+/home/stud/esp/ESP_project_prototype/main/ScopedLocker.h:
 /home/stud/esp/ESP_project_prototype/main/./Bluetooth.cpp:

@@ -1,3 +1,5 @@
+#ifndef _ESPCONTROLLER_H_
+#define _ESPCONTROLLER_H_
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -13,7 +15,7 @@
 #include "es8388_registers.h"
 
 #define I2S_NUM I2S_NUM_0
-#define I2S_READLEN 512
+#define I2S_READLEN 200
 //#define I2S_READLEN 50 * 4
 
 #define I2C_NUM I2C_NUM_0
@@ -29,3 +31,5 @@ public:
   esp_err_t I2SInit();
 private:
 };
+
+#endif
